@@ -426,7 +426,16 @@ section#hero {
   section#hero{ padding: 88px 16px 40px; }
   .sec{ padding: 0 16px; }
   .sec-wrap{ padding: 48px 0; }
-
+  .hero-eyebrow{
+    margin-top: 0px !important;
+  }
+  .hero-meta
+  {
+    font-size: 12px !important;
+  }
+  .hero-left{
+    padding: 0px !important;
+  }
   .logo-usage-grid{ grid-template-columns: 1fr; }
   .do-grid{ grid-template-columns: 1fr; }
   .do-card.span2{ grid-column: span 1; }
