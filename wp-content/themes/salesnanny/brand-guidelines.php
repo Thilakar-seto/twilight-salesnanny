@@ -632,108 +632,273 @@ section#hero {
   </div> -->
 
   <style>
-    /* Favicon Grid Layout */
-    .variants-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    /* Variation Card Styling */
+    /* Legacy color-variant block (kept as requested) */
     .variant-card {
-        padding: 40px;
-        border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 1px solid #eee;
-        background-color: transparent;
-        transition: transform 0.2s ease;
+      padding: 40px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #eee;
+      background-color: transparent;
+      transition: transform 0.2s ease;
     }
 
     .variant-card:hover {
-        transform: translateY(-2px);
+      transform: translateY(-2px);
     }
 
-    /* Specific style for White Favicon variation */
     .variant-card.dark-mode {
-        background-color: #1a1a1a;
-        border: none;
+      background-color: #1a1a1a;
+      border: none;
     }
 
-    /* SVG Icon Sizing and Fill */
     .variant-card svg {
-        height: 64px;
-        width: auto;
-        display: block;
-        margin: 0 auto;
+      height: 64px;
+      width: auto;
+      display: block;
+      margin: 0 auto;
     }
 
-    /* Labels */
     .variant-label {
-        font-size: 12px;
-        margin-top: 15px;
-        font-weight: 600;
-        color: #666;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
+      font-size: 12px;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: center;
     }
 
     .variant-card.dark-mode .variant-label {
-        color: #ffffff;
+      color: #ffffff;
     }
-</style>
+
+    .favicon-size-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .favicon-size-card {
+      border: 1px solid #e9e9e9;
+      border-radius: 10px;
+      background: #ffffff;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      min-height: 215px;
+    }
+
+    .favicon-size-preview {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 10px;
+      background: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .favicon-size-preview.cream {
+      background: #f5f1e8;
+    }
+
+    .favicon-size-mark {
+      display: block;
+    width: 100%;  
+    height: auto;
+    }
+
+    .favicon-size-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #444;
+      text-align: center;
+      line-height: 1.25;
+    }
+
+    @media (max-width: 1200px) {
+      .favicon-size-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .favicon-size-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .favicon-size-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 
 <div class="subdiv fade-in visible">
     <h3 class="subdiv-title">Favicon Variations</h3>
     <hr class="subdiv-rule">
-    
+
     <div class="variants-grid">
-        <!-- Red Variation -->
-        <div class="variant-card">
-            <svg viewBox="0 0 258.98 250" xmlns="http://www.w3.org/2000/svg" style="fill: #e53e3e;">
-                <path d="M231.52,211.84H27.46a.93.93,0,1,1,0-1.85H231.52a.93.93,0,1,1,0,1.85Z"></path>
-                <path d="M218.4,205.6H130.13V70.52a.93.93,0,0,1,1.85,0V203.75H218.4a.93.93,0,1,1,0,1.85Z"></path>
-                <path d="M205,199.1H136.76V95.2a.93.93,0,0,1,1.85,0V197.25H205a.93.93,0,0,1,0,1.85Z"></path>
-                <path d="M195,192.82H143.35v-71.1a.92.92,0,1,1,1.84,0V191H195a.92.92,0,1,1,0,1.84Z"></path>
-                <path d="M124.2,211.84a.92.92,0,0,1-.93-.92V39.08a.93.93,0,0,1,1.85,0V210.92A.92.92,0,0,1,124.2,211.84Z"></path>
-                <path d="M118.62,205.6H37.78a.93.93,0,0,1,0-1.85h79V67.6a.93.93,0,1,1,1.85,0Z"></path>
-                <path d="M112.51,199.1H51.81a.93.93,0,0,1,0-1.85h58.85V91.7a.93.93,0,1,1,1.85,0Z"></path>
-                <path d="M106,192.82H59.34a.92.92,0,0,1,0-1.84h44.82V116.46a.92.92,0,1,1,1.84,0Z"></path>
-            </svg>
-            <span class="variant-label">Red Variation</span>
-        </div>
+      <div class="variant-card">
+        <svg viewBox="0 0 258.98 250" xmlns="http://www.w3.org/2000/svg" style="fill:#e53e3e;">
+          <path d="M231.52,211.84H27.46a.93.93,0,1,1,0-1.85H231.52a.93.93,0,1,1,0,1.85Z"></path>
+          <path d="M218.4,205.6H130.13V70.52a.93.93,0,0,1,1.85,0V203.75H218.4a.93.93,0,1,1,0,1.85Z"></path>
+          <path d="M205,199.1H136.76V95.2a.93.93,0,0,1,1.85,0V197.25H205a.93.93,0,0,1,0,1.85Z"></path>
+          <path d="M195,192.82H143.35v-71.1a.92.92,0,1,1,1.84,0V191H195a.92.92,0,1,1,0,1.84Z"></path>
+          <path d="M124.2,211.84a.92.92,0,0,1-.93-.92V39.08a.93.93,0,0,1,1.85,0V210.92A.92.92,0,0,1,124.2,211.84Z"></path>
+          <path d="M118.62,205.6H37.78a.93.93,0,0,1,0-1.85h79V67.6a.93.93,0,1,1,1.85,0Z"></path>
+          <path d="M112.51,199.1H51.81a.93.93,0,0,1,0-1.85h58.85V91.7a.93.93,0,1,1,1.85,0Z"></path>
+          <path d="M106,192.82H59.34a.92.92,0,0,1,0-1.84h44.82V116.46a.92.92,0,1,1,1.84,0Z"></path>
+        </svg>
+        <span class="variant-label">Red Variation</span>
+      </div>
 
-        <!-- White Variation on Black -->
-        <div class="variant-card dark-mode">
-            <svg viewBox="0 0 258.98 250" xmlns="http://www.w3.org/2000/svg" style="fill: #ffffff;">
-                <path d="M231.52,211.84H27.46a.93.93,0,1,1,0-1.85H231.52a.93.93,0,1,1,0,1.85Z"></path>
-                <path d="M218.4,205.6H130.13V70.52a.93.93,0,0,1,1.85,0V203.75H218.4a.93.93,0,1,1,0,1.85Z"></path>
-                <path d="M205,199.1H136.76V95.2a.93.93,0,0,1,1.85,0V197.25H205a.93.93,0,0,1,0,1.85Z"></path>
-                <path d="M195,192.82H143.35v-71.1a.92.92,0,1,1,1.84,0V191H195a.92.92,0,1,1,0,1.84Z"></path>
-                <path d="M124.2,211.84a.92.92,0,0,1-.93-.92V39.08a.93.93,0,0,1,1.85,0V210.92A.92.92,0,0,1,124.2,211.84Z"></path>
-                <path d="M118.62,205.6H37.78a.93.93,0,0,1,0-1.85h79V67.6a.93.93,0,1,1,1.85,0Z"></path>
-                <path d="M112.51,199.1H51.81a.93.93,0,0,1,0-1.85h58.85V91.7a.93.93,0,1,1,1.85,0Z"></path>
-                <path d="M106,192.82H59.34a.92.92,0,0,1,0-1.84h44.82V116.46a.92.92,0,1,1,1.84,0Z"></path>
-            </svg>
-            <span class="variant-label">White Variation</span>
-        </div>
+      <div class="variant-card dark-mode">
+        <svg viewBox="0 0 258.98 250" xmlns="http://www.w3.org/2000/svg" style="fill:#ffffff;">
+          <path d="M231.52,211.84H27.46a.93.93,0,1,1,0-1.85H231.52a.93.93,0,1,1,0,1.85Z"></path>
+          <path d="M218.4,205.6H130.13V70.52a.93.93,0,0,1,1.85,0V203.75H218.4a.93.93,0,1,1,0,1.85Z"></path>
+          <path d="M205,199.1H136.76V95.2a.93.93,0,0,1,1.85,0V197.25H205a.93.93,0,0,1,0,1.85Z"></path>
+          <path d="M195,192.82H143.35v-71.1a.92.92,0,1,1,1.84,0V191H195a.92.92,0,1,1,0,1.84Z"></path>
+          <path d="M124.2,211.84a.92.92,0,0,1-.93-.92V39.08a.93.93,0,0,1,1.85,0V210.92A.92.92,0,0,1,124.2,211.84Z"></path>
+          <path d="M118.62,205.6H37.78a.93.93,0,0,1,0-1.85h79V67.6a.93.93,0,1,1,1.85,0Z"></path>
+          <path d="M112.51,199.1H51.81a.93.93,0,0,1,0-1.85h58.85V91.7a.93.93,0,1,1,1.85,0Z"></path>
+          <path d="M106,192.82H59.34a.92.92,0,0,1,0-1.84h44.82V116.46a.92.92,0,1,1,1.84,0Z"></path>
+        </svg>
+        <span class="variant-label">White Variation</span>
+      </div>
 
-        <!-- Black Variation -->
-        <div class="variant-card">
-            <svg viewBox="0 0 258.98 250" xmlns="http://www.w3.org/2000/svg" style="fill: #000000;">
-                <path d="M231.52,211.84H27.46a.93.93,0,1,1,0-1.85H231.52a.93.93,0,1,1,0,1.85Z"></path>
-                <path d="M218.4,205.6H130.13V70.52a.93.93,0,0,1,1.85,0V203.75H218.4a.93.93,0,1,1,0,1.85Z"></path>
-                <path d="M205,199.1H136.76V95.2a.93.93,0,0,1,1.85,0V197.25H205a.93.93,0,0,1,0,1.85Z"></path>
-                <path d="M195,192.82H143.35v-71.1a.92.92,0,1,1,1.84,0V191H195a.92.92,0,1,1,0,1.84Z"></path>
-                <path d="M124.2,211.84a.92.92,0,0,1-.93-.92V39.08a.93.93,0,0,1,1.85,0V210.92A.92.92,0,0,1,124.2,211.84Z"></path>
-                <path d="M118.62,205.6H37.78a.93.93,0,0,1,0-1.85h79V67.6a.93.93,0,1,1,1.85,0Z"></path>
-                <path d="M112.51,199.1H51.81a.93.93,0,0,1,0-1.85h58.85V91.7a.93.93,0,1,1,1.85,0Z"></path>
-                <path d="M106,192.82H59.34a.92.92,0,0,1,0-1.84h44.82V116.46a.92.92,0,1,1,1.84,0Z"></path>
-            </svg>
-            <span class="variant-label">Black Variation</span>
+      <div class="variant-card">
+        <svg viewBox="0 0 258.98 250" xmlns="http://www.w3.org/2000/svg" style="fill:#000000;">
+          <path d="M231.52,211.84H27.46a.93.93,0,1,1,0-1.85H231.52a.93.93,0,1,1,0,1.85Z"></path>
+          <path d="M218.4,205.6H130.13V70.52a.93.93,0,0,1,1.85,0V203.75H218.4a.93.93,0,1,1,0,1.85Z"></path>
+          <path d="M205,199.1H136.76V95.2a.93.93,0,0,1,1.85,0V197.25H205a.93.93,0,0,1,0,1.85Z"></path>
+          <path d="M195,192.82H143.35v-71.1a.92.92,0,1,1,1.84,0V191H195a.92.92,0,1,1,0,1.84Z"></path>
+          <path d="M124.2,211.84a.92.92,0,0,1-.93-.92V39.08a.93.93,0,0,1,1.85,0V210.92A.92.92,0,0,1,124.2,211.84Z"></path>
+          <path d="M118.62,205.6H37.78a.93.93,0,0,1,0-1.85h79V67.6a.93.93,0,1,1,1.85,0Z"></path>
+          <path d="M112.51,199.1H51.81a.93.93,0,0,1,0-1.85h58.85V91.7a.93.93,0,1,1,1.85,0Z"></path>
+          <path d="M106,192.82H59.34a.92.92,0,0,1,0-1.84h44.82V116.46a.92.92,0,1,1,1.84,0Z"></path>
+        </svg>
+        <span class="variant-label">Black Variation</span>
+      </div>
+    </div>
+
+    <h3 class="subdiv-title" style="margin-top:44px;">Favicon Size Variations</h3>
+    <hr class="subdiv-rule">
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <symbol id="salesnanny-favicon-mark" viewBox="0 0 258.98 250">
+          <path d="M231.52,211.84H27.46a.93.93,0,1,1,0-1.85H231.52a.93.93,0,1,1,0,1.85Z"></path>
+          <path d="M218.4,205.6H130.13V70.52a.93.93,0,0,1,1.85,0V203.75H218.4a.93.93,0,1,1,0,1.85Z"></path>
+          <path d="M205,199.1H136.76V95.2a.93.93,0,0,1,1.85,0V197.25H205a.93.93,0,0,1,0,1.85Z"></path>
+          <path d="M195,192.82H143.35v-71.1a.92.92,0,1,1,1.84,0V191H195a.92.92,0,1,1,0,1.84Z"></path>
+          <path d="M124.2,211.84a.92.92,0,0,1-.93-.92V39.08a.93.93,0,0,1,1.85,0V210.92A.92.92,0,0,1,124.2,211.84Z"></path>
+          <path d="M118.62,205.6H37.78a.93.93,0,0,1,0-1.85h79V67.6a.93.93,0,1,1,1.85,0Z"></path>
+          <path d="M112.51,199.1H51.81a.93.93,0,0,1,0-1.85h58.85V91.7a.93.93,0,1,1,1.85,0Z"></path>
+          <path d="M106,192.82H59.34a.92.92,0,0,1,0-1.84h44.82V116.46a.92.92,0,1,1,1.84,0Z"></path>
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="favicon-size-grid">
+
+      <div class="favicon-size-card">
+        <div class="favicon-size-preview">
+        <div style="width:80px;height:80px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <img
+            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2IiBmaWxsPSJub25lIj4KICA8cmVjdCB4PSIwLjAxNTYyNSIgeT0iMC4wMTU2MjUiIHdpZHRoPSIxNS45Njg4IiBoZWlnaHQ9IjE1Ljk2ODgiIHN0cm9rZT0iI0VDMjEyOCIgc3Ryb2tlLXdpZHRoPSIwLjAzMTI1Ij48L3JlY3Q+CiAgPHBhdGggZD0iTTAuNjI1IDE0QzAuNjI1IDEzLjk2NTUgMC42NTI5ODIgMTMuOTM3NSAwLjY4NzUgMTMuOTM3NUgxNS4zMTI1QzE1LjM0NyAxMy45Mzc1IDE1LjM3NSAxMy45NjU1IDE1LjM3NSAxNEMxNS4zNzUgMTQuMDM0NSAxNS4zNDcgMTQuMDYyNSAxNS4zMTI1IDE0LjA2MjVIMC42ODc1QzAuNjUyOTgyIDE0LjA2MjUgMC42MjUgMTQuMDM0NSAwLjYyNSAxNFoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNOC4wMDAwMyAyLjIxODc1QzguMDM0NTUgMi4yMTg3NSA4LjA2MjUzIDIuMjQ2NzMgOC4wNjI1MyAyLjI4MTI1VjE0LjA2MjVINy45Mzc1M1YyLjI4MTI1QzcuOTM3NTMgMi4yNDY3MyA3Ljk2NTUxIDIuMjE4NzUgOC4wMDAwMyAyLjIxODc1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0xLjQ2ODc1IDEzLjY1NjJDMS40Njg3NSAxMy42MjE3IDEuNDk2NzMgMTMuNTkzOCAxLjUzMTI1IDEzLjU5MzhINy42ODc1M1YxMy43MTg4SDEuNTMxMjVDMS40OTY3MyAxMy43MTg4IDEuNDY4NzUgMTMuNjkwOCAxLjQ2ODc1IDEzLjY1NjJaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTIuNTkzNzUgMTMuMzEyNUMyLjU5Mzc1IDEzLjI3OCAyLjYyMTczIDEzLjI1IDIuNjU2MjUgMTMuMjVINy4zNzUwM1YxMy4zNzVIMi42NTYyNUMyLjYyMTczIDEzLjM3NSAyLjU5Mzc1IDEzLjM0NyAyLjU5Mzc1IDEzLjMxMjVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTMuMjUgMTIuOTY4OEMzLjI1IDEyLjkzNDIgMy4yNzc5OCAxMi45MDYyIDMuMzEyNSAxMi45MDYySDcuMDAwMDNWMTMuMDMxMkgzLjMxMjVDMy4yNzc5OCAxMy4wMzEyIDMuMjUgMTMuMDAzMyAzLjI1IDEyLjk2ODhaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTQuMTI1IDEyLjY1NjJDNC4xMjUgMTIuNjIxNyA0LjE1Mjk4IDEyLjU5MzggNC4xODc1IDEyLjU5MzhINi42NTYyOFYxMi43MTg4SDQuMTg3NUM0LjE1Mjk4IDEyLjcxODggNC4xMjUgMTIuNjkwOCA0LjEyNSAxMi42NTYyWiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0xNC4zNzUgMTMuNjU2MkMxNC4zNzUgMTMuNjIxNyAxNC4zNDcgMTMuNTkzOCAxNC4zMTI1IDEzLjU5MzhIOC40Mzc1M1YxMy43MTg4SDE0LjMxMjVDMTQuMzQ3IDEzLjcxODggMTQuMzc1IDEzLjY5MDggMTQuMzc1IDEzLjY1NjJaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTEzLjI1IDEzLjMxMjVDMTMuMjUgMTMuMjc4IDEzLjIyMiAxMy4yNSAxMy4xODc1IDEzLjI1SDguNzUwMDNWMTMuMzc1SDEzLjE4NzVDMTMuMjIyIDEzLjM3NSAxMy4yNSAxMy4zNDcgMTMuMjUgMTMuMzEyNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMTIuNDA2MiAxMi45Njg4QzEyLjQwNjIgMTIuOTM0MiAxMi4zNzgzIDEyLjkwNjIgMTIuMzQzOCAxMi45MDYySDkuMTI1MDNWMTMuMDMxMkgxMi4zNDM4QzEyLjM3ODMgMTMuMDMxMiAxMi40MDYyIDEzLjAwMzMgMTIuNDA2MiAxMi45Njg4WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0xMS40MDYyIDEyLjY1NjJDMTEuNDA2MiAxMi42MjE3IDExLjM3ODMgMTIuNTkzOCAxMS4zNDM4IDEyLjU5MzhIOS40Njg3OFYxMi43MTg4SDExLjM0MzhDMTEuMzc4MyAxMi43MTg4IDExLjQwNjIgMTIuNjkwOCAxMS40MDYyIDEyLjY1NjJaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTcuNjI1MDMgMy4yNUM3LjU5MDUxIDMuMjUgNy41NjI1MyAzLjI3Nzk4IDcuNTYyNTMgMy4zMTI1VjEzLjcxODhINy42ODc1M1YzLjMxMjVDNy42ODc1MyAzLjI3Nzk4IDcuNjU5NTUgMy4yNSA3LjYyNTAzIDMuMjVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTcuMzEyNTMgNC4yMTg3NUM3LjI3ODAxIDQuMjE4NzUgNy4yNTAwMyA0LjI0NjczIDcuMjUwMDMgNC4yODEyNVYxMy4zNzVINy4zNzUwM1Y0LjI4MTI1QzcuMzc1MDMgNC4yNDY3MyA3LjM0NzA1IDQuMjE4NzUgNy4zMTI1MyA0LjIxODc1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik02Ljk2ODc4IDUuMjE4NzVDNi45MzQyNiA1LjIxODc1IDYuOTA2MjggNS4yNDY3MyA2LjkwNjI4IDUuMjgxMjVWMTMuMDMxMkg3LjAzMTI4VjUuMjgxMjVDNy4wMzEyOCA1LjI0NjczIDcuMDAzMyA1LjIxODc1IDYuOTY4NzggNS4yMTg3NVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNNi42MjUwMyA2LjA5Mzc1QzYuNTkwNTEgNi4wOTM3NSA2LjU2MjUzIDYuMTIxNzMgNi41NjI1MyA2LjE1NjI1VjEyLjcxODhINi42ODc1M1Y2LjE1NjI1QzYuNjg3NTMgNi4xMjE3MyA2LjY1OTU1IDYuMDkzNzUgNi42MjUwMyA2LjA5Mzc1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik04LjM3NTAzIDMuMjVDOC40MDk1NSAzLjI1IDguNDM3NTMgMy4yNzc5OCA4LjQzNzUzIDMuMzEyNVYxMy43MTg4SDguMzEyNTNWMy4zMTI1QzguMzEyNTMgMy4yNzc5OCA4LjM0MDUxIDMuMjUgOC4zNzUwMyAzLjI1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik04LjcxODc4IDQuMjE4NzVDOC43NTMzIDQuMjE4NzUgOC43ODEyOCA0LjI0NjczIDguNzgxMjggNC4yODEyNVYxMy4zNzVIOC42NTYyOFY0LjI4MTI1QzguNjU2MjggNC4yNDY3MyA4LjY4NDI2IDQuMjE4NzUgOC43MTg3OCA0LjIxODc1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik05LjA5Mzc4IDUuMjE4NzVDOS4xMjgzIDUuMjE4NzUgOS4xNTYyOCA1LjI0NjczIDkuMTU2MjggNS4yODEyNVYxMy4wMzEySDkuMDMxMjhWNS4yODEyNUM5LjAzMTI4IDUuMjQ2NzMgOS4wNTkyNiA1LjIxODc1IDkuMDkzNzggNS4yMTg3NVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNOS41MDAwMyA2LjA5Mzc1QzkuNTM0NTUgNi4wOTM3NSA5LjU2MjUzIDYuMTIxNzMgOS41NjI1MyA2LjE1NjI1VjEyLjcxODhIOS40Mzc1M1Y2LjE1NjI1QzkuNDM3NTMgNi4xMjE3MyA5LjQ2NTUxIDYuMDkzNzUgOS41MDAwMyA2LjA5Mzc1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgo8L3N2Zz4K"
+            alt="Salesnanny favicon 256 x 256"
+            class="img-fluid"
+            style="max-width:16px;width:100%;height:auto;clip-path: inset(1px);"
+          >
+          </div>
         </div>
+        <span class="favicon-size-label">16 x 16<br>Variation Size</span>
+      </div>
+      <div class="favicon-size-card">
+        <div class="favicon-size-preview">
+        <div style="width:80px;height:80px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <img
+            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KICA8cmVjdCB4PSIwLjAyMzQzNzUiIHk9IjAuMDIzNDM3NSIgd2lkdGg9IjIzLjk1MzEiIGhlaWdodD0iMjMuOTUzMSIgc3Ryb2tlPSIjRUMyMTI4IiBzdHJva2Utd2lkdGg9IjAuMDQ2ODc1Ij48L3JlY3Q+CiAgPHBhdGggZD0iTTAuOTM3NSAyMUMwLjkzNzUgMjAuOTQ4MiAwLjk3OTQ3MyAyMC45MDYyIDEuMDMxMjUgMjAuOTA2MkgyMi45Njg4QzIzLjAyMDUgMjAuOTA2MiAyMy4wNjI1IDIwLjk0ODIgMjMuMDYyNSAyMUMyMy4wNjI1IDIxLjA1MTggMjMuMDIwNSAyMS4wOTM4IDIyLjk2ODggMjEuMDkzOEgxLjAzMTI1QzAuOTc5NDczIDIxLjA5MzggMC45Mzc1IDIxLjA1MTggMC45Mzc1IDIxWiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0xMiAzLjMyODEyQzEyLjA1MTggMy4zMjgxMiAxMi4wOTM4IDMuMzcwMSAxMi4wOTM4IDMuNDIxODhWMjEuMDkzOEgxMS45MDYzVjMuNDIxODdDMTEuOTA2MyAzLjM3MDEgMTEuOTQ4MyAzLjMyODEyIDEyIDMuMzI4MTJaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTIuMjAzMTIgMjAuNDg0NEMyLjIwMzEyIDIwLjQzMjYgMi4yNDUxIDIwLjM5MDYgMi4yOTY4OCAyMC4zOTA2SDExLjUzMTNWMjAuNTc4MUgyLjI5Njg3QzIuMjQ1MSAyMC41NzgxIDIuMjAzMTIgMjAuNTM2MiAyLjIwMzEyIDIwLjQ4NDRaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTMuODkwNjIgMTkuOTY4OEMzLjg5MDYyIDE5LjkxNyAzLjkzMjYgMTkuODc1IDMuOTg0MzggMTkuODc1SDExLjA2MjVWMjAuMDYyNUgzLjk4NDM4QzMuOTMyNiAyMC4wNjI1IDMuODkwNjIgMjAuMDIwNSAzLjg5MDYyIDE5Ljk2ODhaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTQuODc1IDE5LjQ1MzFDNC44NzUgMTkuNDAxMyA0LjkxNjk3IDE5LjM1OTQgNC45Njg3NSAxOS4zNTk0SDEwLjVWMTkuNTQ2OUg0Ljk2ODc1QzQuOTE2OTcgMTkuNTQ2OSA0Ljg3NSAxOS41MDQ5IDQuODc1IDE5LjQ1MzFaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTYuMTg3NSAxOC45ODQ0QzYuMTg3NSAxOC45MzI2IDYuMjI5NDcgMTguODkwNiA2LjI4MTI1IDE4Ljg5MDZIOS45ODQ0MlYxOS4wNzgxSDYuMjgxMjVDNi4yMjk0NyAxOS4wNzgxIDYuMTg3NSAxOS4wMzYyIDYuMTg3NSAxOC45ODQ0WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0yMS41NjI1IDIwLjQ4NDRDMjEuNTYyNSAyMC40MzI2IDIxLjUyMDUgMjAuMzkwNiAyMS40Njg4IDIwLjM5MDZIMTIuNjU2M1YyMC41NzgxSDIxLjQ2ODhDMjEuNTIwNSAyMC41NzgxIDIxLjU2MjUgMjAuNTM2MiAyMS41NjI1IDIwLjQ4NDRaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTE5Ljg3NSAxOS45Njg4QzE5Ljg3NSAxOS45MTcgMTkuODMzIDE5Ljg3NSAxOS43ODEyIDE5Ljg3NUgxMy4xMjVWMjAuMDYyNUgxOS43ODEyQzE5LjgzMyAyMC4wNjI1IDE5Ljg3NSAyMC4wMjA1IDE5Ljg3NSAxOS45Njg4WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0xOC42MDk0IDE5LjQ1MzFDMTguNjA5NCAxOS40MDEzIDE4LjU2NzQgMTkuMzU5NCAxOC41MTU2IDE5LjM1OTRIMTMuNjg3NVYxOS41NDY5SDE4LjUxNTZDMTguNTY3NCAxOS41NDY5IDE4LjYwOTQgMTkuNTA0OSAxOC42MDk0IDE5LjQ1MzFaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTE3LjEwOTQgMTguOTg0NEMxNy4xMDk0IDE4LjkzMjYgMTcuMDY3NCAxOC44OTA2IDE3LjAxNTYgMTguODkwNkgxNC4yMDMyVjE5LjA3ODFIMTcuMDE1NkMxNy4wNjc0IDE5LjA3ODEgMTcuMTA5NCAxOS4wMzYyIDE3LjEwOTQgMTguOTg0NFoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMTEuNDM3NSA0Ljg3NUMxMS4zODU4IDQuODc1IDExLjM0MzggNC45MTY5NyAxMS4zNDM4IDQuOTY4NzVWMjAuNTc4MUgxMS41MzEzVjQuOTY4NzVDMTEuNTMxMyA0LjkxNjk3IDExLjQ4OTMgNC44NzUgMTEuNDM3NSA0Ljg3NVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMTAuOTY4OCA2LjMyODEyQzEwLjkxNyA2LjMyODEyIDEwLjg3NSA2LjM3MDEgMTAuODc1IDYuNDIxODhWMjAuMDYyNUgxMS4wNjI1VjYuNDIxODhDMTEuMDYyNSA2LjM3MDEgMTEuMDIwNiA2LjMyODEyIDEwLjk2ODggNi4zMjgxMloiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMTAuNDUzMiA3LjgyODEyQzEwLjQwMTQgNy44MjgxMiAxMC4zNTk0IDcuODcwMSAxMC4zNTk0IDcuOTIxODhWMTkuNTQ2OUgxMC41NDY5VjcuOTIxODhDMTAuNTQ2OSA3Ljg3MDEgMTAuNTA0OSA3LjgyODEyIDEwLjQ1MzIgNy44MjgxMloiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNOS45Mzc1NSA5LjE0MDYyQzkuODg1NzcgOS4xNDA2MiA5Ljg0MzggOS4xODI2IDkuODQzOCA5LjIzNDM4VjE5LjA3ODFIMTAuMDMxM1Y5LjIzNDM4QzEwLjAzMTMgOS4xODI2IDkuOTg5MzIgOS4xNDA2MiA5LjkzNzU1IDkuMTQwNjJaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTEyLjU2MjUgNC44NzVDMTIuNjE0MyA0Ljg3NSAxMi42NTYzIDQuOTE2OTcgMTIuNjU2MyA0Ljk2ODc1VjIwLjU3ODFIMTIuNDY4OFY0Ljk2ODc1QzEyLjQ2ODggNC45MTY5NyAxMi41MTA4IDQuODc1IDEyLjU2MjUgNC44NzVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTEzLjA3ODIgNi4zMjgxMkMxMy4xMjk5IDYuMzI4MTIgMTMuMTcxOSA2LjM3MDEgMTMuMTcxOSA2LjQyMTg4VjIwLjA2MjVIMTIuOTg0NFY2LjQyMTg4QzEyLjk4NDQgNi4zNzAxIDEzLjAyNjQgNi4zMjgxMiAxMy4wNzgyIDYuMzI4MTJaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTEzLjY0MDcgNy44MjgxMkMxMy42OTI0IDcuODI4MTIgMTMuNzM0NCA3Ljg3MDEgMTMuNzM0NCA3LjkyMTg4VjE5LjU0NjlIMTMuNTQ2OVY3LjkyMTg4QzEzLjU0NjkgNy44NzAxIDEzLjU4ODkgNy44MjgxMiAxMy42NDA3IDcuODI4MTJaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTE0LjI1IDkuMTQwNjJDMTQuMzAxOCA5LjE0MDYyIDE0LjM0MzggOS4xODI2IDE0LjM0MzggOS4yMzQzOFYxOS4wNzgxSDE0LjE1NjNWOS4yMzQzOEMxNC4xNTYzIDkuMTgyNiAxNC4xOTgzIDkuMTQwNjIgMTQuMjUgOS4xNDA2MloiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KPC9zdmc+Cg=="
+            alt="Salesnanny favicon 256 x 256"
+            class="img-fluid"
+            style="max-width:24px;width:100%;height:auto;clip-path: inset(1px);"
+          >
+          </div>
+        </div>
+        <span class="favicon-size-label">24 x 24<br>Variation Size</span>
+      </div>
+      <div class="favicon-size-card">
+        <div class="favicon-size-preview">
+        <div style="width:80px;height:80px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <img
+            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIiBmaWxsPSJub25lIj4KICA8cmVjdCB4PSIwLjAzMTI1IiB5PSIwLjAzMTI1IiB3aWR0aD0iMzEuOTM3NSIgaGVpZ2h0PSIzMS45Mzc1IiBzdHJva2U9IiNFQzIxMjgiIHN0cm9rZS13aWR0aD0iMC4wNjI1Ij48L3JlY3Q+CiAgPHBhdGggZD0iTTEuMjUgMjhDMS4yNSAyNy45MzEgMS4zMDU5NiAyNy44NzUgMS4zNzUgMjcuODc1SDMwLjYyNUMzMC42OTQgMjcuODc1IDMwLjc1IDI3LjkzMSAzMC43NSAyOEMzMC43NSAyOC4wNjkgMzAuNjk0IDI4LjEyNSAzMC42MjUgMjguMTI1SDEuMzc1QzEuMzA1OTYgMjguMTI1IDEuMjUgMjguMDY5IDEuMjUgMjhaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTE2LjAwMDEgNC40Mzc1QzE2LjA2OTEgNC40Mzc1IDE2LjEyNTEgNC40OTM0NiAxNi4xMjUxIDQuNTYyNVYyOC4xMjVIMTUuODc1MVY0LjU2MjVDMTUuODc1MSA0LjQ5MzQ2IDE1LjkzMSA0LjQzNzUgMTYuMDAwMSA0LjQzNzVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTIuOTM3NSAyNy4zMTI1QzIuOTM3NSAyNy4yNDM1IDIuOTkzNDYgMjcuMTg3NSAzLjA2MjUgMjcuMTg3NUgxNS4zNzUxVjI3LjQzNzVIMy4wNjI1QzIuOTkzNDYgMjcuNDM3NSAyLjkzNzUgMjcuMzgxNSAyLjkzNzUgMjcuMzEyNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNNS4xODc1IDI2LjYyNUM1LjE4NzUgMjYuNTU2IDUuMjQzNDYgMjYuNSA1LjMxMjUgMjYuNUgxNC43NTAxVjI2Ljc1SDUuMzEyNUM1LjI0MzQ2IDI2Ljc1IDUuMTg3NSAyNi42OTQgNS4xODc1IDI2LjYyNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNNi41IDI1LjkzNzVDNi41IDI1Ljg2ODUgNi41NTU5NiAyNS44MTI1IDYuNjI1IDI1LjgxMjVIMTQuMDAwMVYyNi4wNjI1SDYuNjI1QzYuNTU1OTYgMjYuMDYyNSA2LjUgMjYuMDA2NSA2LjUgMjUuOTM3NVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNOC4yNSAyNS4zMTI1QzguMjUgMjUuMjQzNSA4LjMwNTk2IDI1LjE4NzUgOC4zNzUgMjUuMTg3NUgxMy4zMTI2VjI1LjQzNzVIOC4zNzVDOC4zMDU5NiAyNS40Mzc1IDguMjUgMjUuMzgxNSA4LjI1IDI1LjMxMjVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTI4Ljc1IDI3LjMxMjVDMjguNzUgMjcuMjQzNSAyOC42OTQgMjcuMTg3NSAyOC42MjUgMjcuMTg3NUgxNi44NzUxVjI3LjQzNzVIMjguNjI1QzI4LjY5NCAyNy40Mzc1IDI4Ljc1IDI3LjM4MTUgMjguNzUgMjcuMzEyNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMjYuNSAyNi42MjVDMjYuNSAyNi41NTYgMjYuNDQ0IDI2LjUgMjYuMzc1IDI2LjVIMTcuNTAwMVYyNi43NUgyNi4zNzVDMjYuNDQ0IDI2Ljc1IDI2LjUgMjYuNjk0IDI2LjUgMjYuNjI1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0yNC44MTI1IDI1LjkzNzVDMjQuODEyNSAyNS44Njg1IDI0Ljc1NjUgMjUuODEyNSAyNC42ODc1IDI1LjgxMjVIMTguMjUwMVYyNi4wNjI1SDI0LjY4NzVDMjQuNzU2NSAyNi4wNjI1IDI0LjgxMjUgMjYuMDA2NSAyNC44MTI1IDI1LjkzNzVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTIyLjgxMjUgMjUuMzEyNUMyMi44MTI1IDI1LjI0MzUgMjIuNzU2NSAyNS4xODc1IDIyLjY4NzUgMjUuMTg3NUgxOC45Mzc2VjI1LjQzNzVIMjIuNjg3NUMyMi43NTY1IDI1LjQzNzUgMjIuODEyNSAyNS4zODE1IDIyLjgxMjUgMjUuMzEyNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMTUuMjUwMSA2LjVDMTUuMTgxIDYuNSAxNS4xMjUxIDYuNTU1OTYgMTUuMTI1MSA2LjYyNVYyNy40Mzc1SDE1LjM3NTFWNi42MjVDMTUuMzc1MSA2LjU1NTk2IDE1LjMxOTEgNi41IDE1LjI1MDEgNi41WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0xNC42MjUxIDguNDM3NUMxNC41NTYgOC40Mzc1IDE0LjUwMDEgOC40OTM0NiAxNC41MDAxIDguNTYyNVYyNi43NUgxNC43NTAxVjguNTYyNUMxNC43NTAxIDguNDkzNDYgMTQuNjk0MSA4LjQzNzUgMTQuNjI1MSA4LjQzNzVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTEzLjkzNzYgMTAuNDM3NUMxMy44Njg1IDEwLjQzNzUgMTMuODEyNiAxMC40OTM1IDEzLjgxMjYgMTAuNTYyNVYyNi4wNjI1SDE0LjA2MjZWMTAuNTYyNUMxNC4wNjI2IDEwLjQ5MzUgMTQuMDA2NiAxMC40Mzc1IDEzLjkzNzYgMTAuNDM3NVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMTMuMjUwMSAxMi4xODc1QzEzLjE4MSAxMi4xODc1IDEzLjEyNTEgMTIuMjQzNSAxMy4xMjUxIDEyLjMxMjVWMjUuNDM3NUgxMy4zNzUxVjEyLjMxMjVDMTMuMzc1MSAxMi4yNDM1IDEzLjMxOTEgMTIuMTg3NSAxMy4yNTAxIDEyLjE4NzVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTE2Ljc1MDEgNi41QzE2LjgxOTEgNi41IDE2Ljg3NTEgNi41NTU5NiAxNi44NzUxIDYuNjI1VjI3LjQzNzVIMTYuNjI1MVY2LjYyNUMxNi42MjUxIDYuNTU1OTYgMTYuNjgxIDYuNSAxNi43NTAxIDYuNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMTcuNDM3NiA4LjQzNzVDMTcuNTA2NiA4LjQzNzUgMTcuNTYyNiA4LjQ5MzQ2IDE3LjU2MjYgOC41NjI1VjI2Ljc1SDE3LjMxMjZWOC41NjI1QzE3LjMxMjYgOC40OTM0NiAxNy4zNjg1IDguNDM3NSAxNy40Mzc2IDguNDM3NVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMTguMTg3NiAxMC40Mzc1QzE4LjI1NjYgMTAuNDM3NSAxOC4zMTI2IDEwLjQ5MzUgMTguMzEyNiAxMC41NjI1VjI2LjA2MjVIMTguMDYyNlYxMC41NjI1QzE4LjA2MjYgMTAuNDkzNSAxOC4xMTg1IDEwLjQzNzUgMTguMTg3NiAxMC40Mzc1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0xOS4wMDAxIDEyLjE4NzVDMTkuMDY5MSAxMi4xODc1IDE5LjEyNTEgMTIuMjQzNSAxOS4xMjUxIDEyLjMxMjVWMjUuNDM3NUgxOC44NzUxVjEyLjMxMjVDMTguODc1MSAxMi4yNDM1IDE4LjkzMSAxMi4xODc1IDE5LjAwMDEgMTIuMTg3NVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KPC9zdmc+Cg=="
+            alt="Salesnanny favicon 256 x 256"
+            class="img-fluid"
+            style="max-width:32px;width:100%;height:auto;clip-path: inset(1px);"
+          >
+          </div>
+        </div>
+        <span class="favicon-size-label">32 x 32<br>Variation Size</span>
+      </div>
+      <div class="favicon-size-card">
+        <div class="favicon-size-preview">
+        <div style="width:80px;height:80px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <img
+            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0IiBmaWxsPSJub25lIj4KICA8cmVjdCB4PSIwLjA2MjUiIHk9IjAuMDYyNSIgd2lkdGg9IjYzLjg3NSIgaGVpZ2h0PSI2My44NzUiIHN0cm9rZT0iI0VDMjEyOCIgc3Ryb2tlLXdpZHRoPSIwLjEyNSI+PC9yZWN0PgogIDxwYXRoIGQ9Ik0yLjUgNTZDMi41IDU1Ljg2MTkgMi42MTE5MyA1NS43NSAyLjc1IDU1Ljc1SDYxLjI1QzYxLjM4ODEgNTUuNzUgNjEuNSA1NS44NjE5IDYxLjUgNTZDNjEuNSA1Ni4xMzgxIDYxLjM4ODEgNTYuMjUgNjEuMjUgNTYuMjVIMi43NUMyLjYxMTkzIDU2LjI1IDIuNSA1Ni4xMzgxIDIuNSA1NloiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMzIuMDAwMSA4Ljg3NUMzMi4xMzgyIDguODc1IDMyLjI1MDEgOC45ODY5MyAzMi4yNTAxIDkuMTI1VjU2LjI1SDMxLjc1MDFWOS4xMjVDMzEuNzUwMSA4Ljk4NjkzIDMxLjg2MiA4Ljg3NSAzMi4wMDAxIDguODc1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik01Ljg3NSA1NC42MjVDNS44NzUgNTQuNDg2OSA1Ljk4NjkzIDU0LjM3NSA2LjEyNSA1NC4zNzVIMzAuNzUwMVY1NC44NzVINi4xMjVDNS45ODY5MyA1NC44NzUgNS44NzUgNTQuNzYzMSA1Ljg3NSA1NC42MjVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTEwLjM3NSA1My4yNUMxMC4zNzUgNTMuMTExOSAxMC40ODY5IDUzIDEwLjYyNSA1M0gyOS41MDAxVjUzLjVIMTAuNjI1QzEwLjQ4NjkgNTMuNSAxMC4zNzUgNTMuMzg4MSAxMC4zNzUgNTMuMjVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTEzIDUxLjg3NUMxMyA1MS43MzY5IDEzLjExMTkgNTEuNjI1IDEzLjI1IDUxLjYyNUgyOC4wMDAxVjUyLjEyNUgxMy4yNUMxMy4xMTE5IDUyLjEyNSAxMyA1Mi4wMTMxIDEzIDUxLjg3NVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMTYuNSA1MC42MjVDMTYuNSA1MC40ODY5IDE2LjYxMTkgNTAuMzc1IDE2Ljc1IDUwLjM3NUgyNi42MjUxVjUwLjg3NUgxNi43NUMxNi42MTE5IDUwLjg3NSAxNi41IDUwLjc2MzEgMTYuNSA1MC42MjVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTU3LjUgNTQuNjI1QzU3LjUgNTQuNDg2OSA1Ny4zODgxIDU0LjM3NSA1Ny4yNSA1NC4zNzVIMzMuNzUwMVY1NC44NzVINTcuMjVDNTcuMzg4MSA1NC44NzUgNTcuNSA1NC43NjMxIDU3LjUgNTQuNjI1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik01MyA1My4yNUM1MyA1My4xMTE5IDUyLjg4ODEgNTMgNTIuNzUgNTNIMzUuMDAwMVY1My41SDUyLjc1QzUyLjg4ODEgNTMuNSA1MyA1My4zODgxIDUzIDUzLjI1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik00OS42MjUgNTEuODc1QzQ5LjYyNSA1MS43MzY5IDQ5LjUxMzEgNTEuNjI1IDQ5LjM3NSA1MS42MjVIMzYuNTAwMVY1Mi4xMjVINDkuMzc1QzQ5LjUxMzEgNTIuMTI1IDQ5LjYyNSA1Mi4wMTMxIDQ5LjYyNSA1MS44NzVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTQ1LjYyNSA1MC42MjVDNDUuNjI1IDUwLjQ4NjkgNDUuNTEzMSA1MC4zNzUgNDUuMzc1IDUwLjM3NUgzNy44NzUxVjUwLjg3NUg0NS4zNzVDNDUuNTEzMSA1MC44NzUgNDUuNjI1IDUwLjc2MzEgNDUuNjI1IDUwLjYyNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMzAuNTAwMSAxM0MzMC4zNjIgMTMgMzAuMjUwMSAxMy4xMTE5IDMwLjI1MDEgMTMuMjVWNTQuODc1SDMwLjc1MDFWMTMuMjVDMzAuNzUwMSAxMy4xMTE5IDMwLjYzODIgMTMgMzAuNTAwMSAxM1oiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMjkuMjUwMSAxNi44NzVDMjkuMTEyIDE2Ljg3NSAyOS4wMDAxIDE2Ljk4NjkgMjkuMDAwMSAxNy4xMjVWNTMuNUgyOS41MDAxVjE3LjEyNUMyOS41MDAxIDE2Ljk4NjkgMjkuMzg4MiAxNi44NzUgMjkuMjUwMSAxNi44NzVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTI3Ljg3NTEgMjAuODc1QzI3LjczNyAyMC44NzUgMjcuNjI1MSAyMC45ODY5IDI3LjYyNTEgMjEuMTI1VjUyLjEyNUgyOC4xMjUxVjIxLjEyNUMyOC4xMjUxIDIwLjk4NjkgMjguMDEzMiAyMC44NzUgMjcuODc1MSAyMC44NzVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTI2LjUwMDEgMjQuMzc1QzI2LjM2MiAyNC4zNzUgMjYuMjUwMSAyNC40ODY5IDI2LjI1MDEgMjQuNjI1VjUwLjg3NUgyNi43NTAxVjI0LjYyNUMyNi43NTAxIDI0LjQ4NjkgMjYuNjM4MiAyNC4zNzUgMjYuNTAwMSAyNC4zNzVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTMzLjUwMDEgMTNDMzMuNjM4MiAxMyAzMy43NTAxIDEzLjExMTkgMzMuNzUwMSAxMy4yNVY1NC44NzVIMzMuMjUwMVYxMy4yNUMzMy4yNTAxIDEzLjExMTkgMzMuMzYyIDEzIDMzLjUwMDEgMTNaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTM0Ljg3NTEgMTYuODc1QzM1LjAxMzIgMTYuODc1IDM1LjEyNTEgMTYuOTg2OSAzNS4xMjUxIDE3LjEyNVY1My41SDM0LjYyNTFWMTcuMTI1QzM0LjYyNTEgMTYuOTg2OSAzNC43MzcgMTYuODc1IDM0Ljg3NTEgMTYuODc1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0zNi4zNzUxIDIwLjg3NUMzNi41MTMyIDIwLjg3NSAzNi42MjUxIDIwLjk4NjkgMzYuNjI1MSAyMS4xMjVWNTIuMTI1SDM2LjEyNTFWMjEuMTI1QzM2LjEyNTEgMjAuOTg2OSAzNi4yMzcgMjAuODc1IDM2LjM3NTEgMjAuODc1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0zOC4wMDAxIDI0LjM3NUMzOC4xMzgyIDI0LjM3NSAzOC4yNTAxIDI0LjQ4NjkgMzguMjUwMSAyNC42MjVWNTAuODc1SDM3Ljc1MDFWMjQuNjI1QzM3Ljc1MDEgMjQuNDg2OSAzNy44NjIgMjQuMzc1IDM4LjAwMDEgMjQuMzc1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgo8L3N2Zz4K"
+            alt="Salesnanny favicon 256 x 256"
+            class="img-fluid"
+            style="max-width:64px;width:100%;height:auto;clip-path: inset(1px);"
+          >
+          </div>
+        </div>
+        <span class="favicon-size-label">64 x 64<br>Variation Size</span>
+      </div>
+      <div class="favicon-size-card">
+        <div class="favicon-size-preview">
+        <div style="width:75px;height:75px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <img
+            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMTI4IDEyOCIgZmlsbD0ibm9uZSI+CiAgPHJlY3QgeD0iMC4xMjUiIHk9IjAuMTI1IiB3aWR0aD0iMTI3Ljc1IiBoZWlnaHQ9IjEyNy43NSIgc3Ryb2tlPSIjRUMyMTI4IiBzdHJva2Utd2lkdGg9IjAuMjUiPjwvcmVjdD4KICA8cGF0aCBkPSJNNSAxMTJDNSAxMTEuNzI0IDUuMjIzODYgMTExLjUgNS41IDExMS41SDEyMi41QzEyMi43NzYgMTExLjUgMTIzIDExMS43MjQgMTIzIDExMkMxMjMgMTEyLjI3NiAxMjIuNzc2IDExMi41IDEyMi41IDExMi41SDUuNUM1LjIyMzg2IDExMi41IDUgMTEyLjI3NiA1IDExMloiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNNjQuMDAwMiAxNy43NUM2NC4yNzY0IDE3Ljc1IDY0LjUwMDIgMTcuOTczOSA2NC41MDAyIDE4LjI1VjExMi41SDYzLjUwMDJWMTguMjVDNjMuNTAwMiAxNy45NzM5IDYzLjcyNDEgMTcuNzUgNjQuMDAwMiAxNy43NVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMTEuNzUgMTA5LjI1QzExLjc1IDEwOC45NzQgMTEuOTczOSAxMDguNzUgMTIuMjUgMTA4Ljc1SDYxLjUwMDJWMTA5Ljc1SDEyLjI1QzExLjk3MzkgMTA5Ljc1IDExLjc1IDEwOS41MjYgMTEuNzUgMTA5LjI1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0yMC43NSAxMDYuNUMyMC43NSAxMDYuMjI0IDIwLjk3MzkgMTA2IDIxLjI1IDEwNkg1OS4wMDAyVjEwN0gyMS4yNUMyMC45NzM5IDEwNyAyMC43NSAxMDYuNzc2IDIwLjc1IDEwNi41WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0yNiAxMDMuNzVDMjYgMTAzLjQ3NCAyNi4yMjM5IDEwMy4yNSAyNi41IDEwMy4yNUg1Ni4wMDAyVjEwNC4yNUgyNi41QzI2LjIyMzkgMTA0LjI1IDI2IDEwNC4wMjYgMjYgMTAzLjc1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0zMyAxMDEuMjVDMzMgMTAwLjk3NCAzMy4yMjM5IDEwMC43NSAzMy41IDEwMC43NUg1My4yNTAyVjEwMS43NUgzMy41QzMzLjIyMzkgMTAxLjc1IDMzIDEwMS41MjYgMzMgMTAxLjI1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0xMTUgMTA5LjI1QzExNSAxMDguOTc0IDExNC43NzYgMTA4Ljc1IDExNC41IDEwOC43NUg2Ny41MDAyVjEwOS43NUgxMTQuNUMxMTQuNzc2IDEwOS43NSAxMTUgMTA5LjUyNiAxMTUgMTA5LjI1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0xMDYgMTA2LjVDMTA2IDEwNi4yMjQgMTA1Ljc3NiAxMDYgMTA1LjUgMTA2SDcwLjAwMDJWMTA3SDEwNS41QzEwNS43NzYgMTA3IDEwNiAxMDYuNzc2IDEwNiAxMDYuNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNOTkuMjUgMTAzLjc1Qzk5LjI1IDEwMy40NzQgOTkuMDI2MSAxMDMuMjUgOTguNzUgMTAzLjI1SDczLjAwMDJWMTA0LjI1SDk4Ljc1Qzk5LjAyNjEgMTA0LjI1IDk5LjI1IDEwNC4wMjYgOTkuMjUgMTAzLjc1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik05MS4yNSAxMDEuMjVDOTEuMjUgMTAwLjk3NCA5MS4wMjYxIDEwMC43NSA5MC43NSAxMDAuNzVINzUuNzUwMlYxMDEuNzVIOTAuNzVDOTEuMDI2MSAxMDEuNzUgOTEuMjUgMTAxLjUyNiA5MS4yNSAxMDEuMjVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTYxLjAwMDIgMjZDNjAuNzI0MSAyNiA2MC41MDAyIDI2LjIyMzkgNjAuNTAwMiAyNi41VjEwOS43NUg2MS41MDAyVjI2LjVDNjEuNTAwMiAyNi4yMjM5IDYxLjI3NjQgMjYgNjEuMDAwMiAyNloiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNNTguNTAwMiAzMy43NUM1OC4yMjQxIDMzLjc1IDU4LjAwMDIgMzMuOTczOSA1OC4wMDAyIDM0LjI1VjEwN0g1OS4wMDAyVjM0LjI1QzU5LjAwMDIgMzMuOTczOSA1OC43NzY0IDMzLjc1IDU4LjUwMDIgMzMuNzVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTU1Ljc1MDIgNDEuNzVDNTUuNDc0MSA0MS43NSA1NS4yNTAyIDQxLjk3MzkgNTUuMjUwMiA0Mi4yNVYxMDQuMjVINTYuMjUwMlY0Mi4yNUM1Ni4yNTAyIDQxLjk3MzkgNTYuMDI2NCA0MS43NSA1NS43NTAyIDQxLjc1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik01My4wMDAyIDQ4Ljc1QzUyLjcyNDEgNDguNzUgNTIuNTAwMiA0OC45NzM5IDUyLjUwMDIgNDkuMjVWMTAxLjc1SDUzLjUwMDJWNDkuMjVDNTMuNTAwMiA0OC45NzM5IDUzLjI3NjQgNDguNzUgNTMuMDAwMiA0OC43NVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNNjcuMDAwMiAyNkM2Ny4yNzY0IDI2IDY3LjUwMDIgMjYuMjIzOSA2Ny41MDAyIDI2LjVWMTA5Ljc1SDY2LjUwMDJWMjYuNUM2Ni41MDAyIDI2LjIyMzkgNjYuNzI0MSAyNiA2Ny4wMDAyIDI2WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik02OS43NTAyIDMzLjc1QzcwLjAyNjQgMzMuNzUgNzAuMjUwMiAzMy45NzM5IDcwLjI1MDIgMzQuMjVWMTA3SDY5LjI1MDJWMzQuMjVDNjkuMjUwMiAzMy45NzM5IDY5LjQ3NDEgMzMuNzUgNjkuNzUwMiAzMy43NVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNNzIuNzUwMiA0MS43NUM3My4wMjY0IDQxLjc1IDczLjI1MDIgNDEuOTczOSA3My4yNTAyIDQyLjI1VjEwNC4yNUg3Mi4yNTAyVjQyLjI1QzcyLjI1MDIgNDEuOTczOSA3Mi40NzQxIDQxLjc1IDcyLjc1MDIgNDEuNzVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTc2LjAwMDIgNDguNzVDNzYuMjc2NCA0OC43NSA3Ni41MDAyIDQ4Ljk3MzkgNzYuNTAwMiA0OS4yNVYxMDEuNzVINzUuNTAwMlY0OS4yNUM3NS41MDAyIDQ4Ljk3MzkgNzUuNzI0MSA0OC43NSA3Ni4wMDAyIDQ4Ljc1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgo8L3N2Zz4K"
+            alt="Salesnanny favicon 256 x 256"
+            class="img-fluid"
+            style="max-width:256px;width:100%;height:auto;clip-path: inset(1px);"
+          >
+          </div>
+        </div>
+        <span class="favicon-size-label">128 x 128<br>Variation Size</span>
+      </div>
+      <div class="favicon-size-card">
+        <div class="favicon-size-preview">
+        <div style="width:80px;height:80px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <img
+            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiB2aWV3Qm94PSIwIDAgMjU2IDI1NiIgZmlsbD0ibm9uZSI+CiAgPHJlY3QgeD0iMC4yNSIgeT0iMC4yNSIgd2lkdGg9IjI1NS41IiBoZWlnaHQ9IjI1NS41IiBzdHJva2U9IiNFQzIxMjgiIHN0cm9rZS13aWR0aD0iMC41Ij48L3JlY3Q+CiAgPHBhdGggZD0iTTEwIDIyNEMxMCAyMjMuNDQ4IDEwLjQ0NzcgMjIzIDExIDIyM0gyNDVDMjQ1LjU1MiAyMjMgMjQ2IDIyMy40NDggMjQ2IDIyNEMyNDYgMjI0LjU1MiAyNDUuNTUyIDIyNSAyNDUgMjI1SDExQzEwLjQ0NzcgMjI1IDEwIDIyNC41NTIgMTAgMjI0WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0xMjggMzUuNUMxMjguNTUzIDM1LjUgMTI5IDM1Ljk0NzcgMTI5IDM2LjVWMjI1SDEyN1YzNi41QzEyNyAzNS45NDc3IDEyNy40NDggMzUuNSAxMjggMzUuNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMjMuNSAyMTguNUMyMy41IDIxNy45NDggMjMuOTQ3NyAyMTcuNSAyNC41IDIxNy41SDEyM1YyMTkuNUgyNC41QzIzLjk0NzcgMjE5LjUgMjMuNSAyMTkuMDUyIDIzLjUgMjE4LjVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTQxLjUgMjEzQzQxLjUgMjEyLjQ0OCA0MS45NDc3IDIxMiA0Mi41IDIxMkgxMThWMjE0SDQyLjVDNDEuOTQ3NyAyMTQgNDEuNSAyMTMuNTUyIDQxLjUgMjEzWiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik01MiAyMDcuNUM1MiAyMDYuOTQ4IDUyLjQ0NzcgMjA2LjUgNTMgMjA2LjVIMTEyVjIwOC41SDUzQzUyLjQ0NzcgMjA4LjUgNTIgMjA4LjA1MiA1MiAyMDcuNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNNjYgMjAyLjVDNjYgMjAxLjk0OCA2Ni40NDc3IDIwMS41IDY3IDIwMS41SDEwNi41VjIwMy41SDY3QzY2LjQ0NzcgMjAzLjUgNjYgMjAzLjA1MiA2NiAyMDIuNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMjMwIDIxOC41QzIzMCAyMTcuOTQ4IDIyOS41NTIgMjE3LjUgMjI5IDIxNy41SDEzNVYyMTkuNUgyMjlDMjI5LjU1MiAyMTkuNSAyMzAgMjE5LjA1MiAyMzAgMjE4LjVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTIxMiAyMTNDMjEyIDIxMi40NDggMjExLjU1MiAyMTIgMjExIDIxMkgxNDBWMjE0SDIxMUMyMTEuNTUyIDIxNCAyMTIgMjEzLjU1MiAyMTIgMjEzWiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0xOTguNSAyMDcuNUMxOTguNSAyMDYuOTQ4IDE5OC4wNTIgMjA2LjUgMTk3LjUgMjA2LjVIMTQ2VjIwOC41SDE5Ny41QzE5OC4wNTIgMjA4LjUgMTk4LjUgMjA4LjA1MiAxOTguNSAyMDcuNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMTgyLjUgMjAyLjVDMTgyLjUgMjAxLjk0OCAxODIuMDUyIDIwMS41IDE4MS41IDIwMS41SDE1MS41VjIwMy41SDE4MS41QzE4Mi4wNTIgMjAzLjUgMTgyLjUgMjAzLjA1MiAxODIuNSAyMDIuNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMTIyIDUyQzEyMS40NDggNTIgMTIxIDUyLjQ0NzcgMTIxIDUzVjIxOS41SDEyM1Y1M0MxMjMgNTIuNDQ3NyAxMjIuNTUzIDUyIDEyMiA1MloiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMTE3IDY3LjVDMTE2LjQ0OCA2Ny41IDExNiA2Ny45NDc3IDExNiA2OC41VjIxNEgxMThWNjguNUMxMTggNjcuOTQ3NyAxMTcuNTUzIDY3LjUgMTE3IDY3LjVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTExMS41IDgzLjVDMTEwLjk0OCA4My41IDExMC41IDgzLjk0NzcgMTEwLjUgODQuNVYyMDguNUgxMTIuNVY4NC41QzExMi41IDgzLjk0NzcgMTEyLjA1MyA4My41IDExMS41IDgzLjVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTEwNiA5Ny41QzEwNS40NDggOTcuNSAxMDUgOTcuOTQ3NyAxMDUgOTguNVYyMDMuNUgxMDdWOTguNUMxMDcgOTcuOTQ3NyAxMDYuNTUzIDk3LjUgMTA2IDk3LjVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTEzNCA1MkMxMzQuNTUzIDUyIDEzNSA1Mi40NDc3IDEzNSA1M1YyMTkuNUgxMzNWNTNDMTMzIDUyLjQ0NzcgMTMzLjQ0OCA1MiAxMzQgNTJaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTEzOS41IDY3LjVDMTQwLjA1MyA2Ny41IDE0MC41IDY3Ljk0NzcgMTQwLjUgNjguNVYyMTRIMTM4LjVWNjguNUMxMzguNSA2Ny45NDc3IDEzOC45NDggNjcuNSAxMzkuNSA2Ny41WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0xNDUuNSA4My41QzE0Ni4wNTMgODMuNSAxNDYuNSA4My45NDc3IDE0Ni41IDg0LjVWMjA4LjVIMTQ0LjVWODQuNUMxNDQuNSA4My45NDc3IDE0NC45NDggODMuNSAxNDUuNSA4My41WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0xNTIgOTcuNUMxNTIuNTUzIDk3LjUgMTUzIDk3Ljk0NzcgMTUzIDk4LjVWMjAzLjVIMTUxVjk4LjVDMTUxIDk3Ljk0NzcgMTUxLjQ0OCA5Ny41IDE1MiA5Ny41WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgo8L3N2Zz4K"
+            alt="Salesnanny favicon 256 x 256"
+            class="img-fluid"
+            style="max-width:256px;width:100%;height:auto;clip-path: inset(1px);"
+          >
+          </div>
+        </div>
+        <span class="favicon-size-label">256 x 256<br>Variation Size</span>
+      </div>
+      <div class="favicon-size-card">
+        <div class="favicon-size-preview">
+        <div style="width:100px;height:100px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <img
+            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgZmlsbD0ibm9uZSI+CiAgPHJlY3QgeD0iMC41IiB5PSIwLjUiIHdpZHRoPSI1MTEiIGhlaWdodD0iNTExIiBzdHJva2U9IiNFQzIxMjgiPjwvcmVjdD4KICA8cGF0aCBkPSJNMjAgNDQ4QzIwIDQ0Ni44OTUgMjAuODk1NCA0NDYgMjIgNDQ2SDQ5MEM0OTEuMTA1IDQ0NiA0OTIgNDQ2Ljg5NSA0OTIgNDQ4QzQ5MiA0NDkuMTA1IDQ5MS4xMDUgNDUwIDQ5MCA0NTBIMjJDMjAuODk1NCA0NTAgMjAgNDQ5LjEwNSAyMCA0NDhaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTI1Ni4wMDEgNzFDMjU3LjEwNiA3MSAyNTguMDAxIDcxLjg5NTQgMjU4LjAwMSA3M1Y0NTBIMjU0LjAwMVY3M0MyNTQuMDAxIDcxLjg5NTQgMjU0Ljg5NiA3MSAyNTYuMDAxIDcxWiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik00NyA0MzdDNDcgNDM1Ljg5NSA0Ny44OTU0IDQzNSA0OSA0MzVIMjQ2LjAwMVY0MzlINDlDNDcuODk1NCA0MzkgNDcgNDM4LjEwNSA0NyA0MzdaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTgzIDQyNkM4MyA0MjQuODk1IDgzLjg5NTQgNDI0IDg1IDQyNEgyMzYuMDAxVjQyOEg4NUM4My44OTU0IDQyOCA4MyA0MjcuMTA1IDgzIDQyNloiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMTA0IDQxNUMxMDQgNDEzLjg5NSAxMDQuODk1IDQxMyAxMDYgNDEzSDIyNC4wMDFWNDE3SDEwNkMxMDQuODk1IDQxNyAxMDQgNDE2LjEwNSAxMDQgNDE1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0xMzIgNDA1QzEzMiA0MDMuODk1IDEzMi44OTUgNDAzIDEzNCA0MDNIMjEzLjAwMVY0MDdIMTM0QzEzMi44OTUgNDA3IDEzMiA0MDYuMTA1IDEzMiA0MDVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTQ2MCA0MzdDNDYwIDQzNS44OTUgNDU5LjEwNSA0MzUgNDU4IDQzNUgyNzAuMDAxVjQzOUg0NThDNDU5LjEwNSA0MzkgNDYwIDQzOC4xMDUgNDYwIDQzN1oiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNNDI0IDQyNkM0MjQgNDI0Ljg5NSA0MjMuMTA1IDQyNCA0MjIgNDI0SDI4MC4wMDFWNDI4SDQyMkM0MjMuMTA1IDQyOCA0MjQgNDI3LjEwNSA0MjQgNDI2WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0zOTcgNDE1QzM5NyA0MTMuODk1IDM5Ni4xMDUgNDEzIDM5NSA0MTNIMjkyLjAwMVY0MTdIMzk1QzM5Ni4xMDUgNDE3IDM5NyA0MTYuMTA1IDM5NyA0MTVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTM2NSA0MDVDMzY1IDQwMy44OTUgMzY0LjEwNSA0MDMgMzYzIDQwM0gzMDMuMDAxVjQwN0gzNjNDMzY0LjEwNSA0MDcgMzY1IDQwNi4xMDUgMzY1IDQwNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMjQ0LjAwMSAxMDRDMjQyLjg5NiAxMDQgMjQyLjAwMSAxMDQuODk1IDI0Mi4wMDEgMTA2VjQzOUgyNDYuMDAxVjEwNkMyNDYuMDAxIDEwNC44OTUgMjQ1LjEwNiAxMDQgMjQ0LjAwMSAxMDRaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTIzNC4wMDEgMTM1QzIzMi44OTYgMTM1IDIzMi4wMDEgMTM1Ljg5NSAyMzIuMDAxIDEzN1Y0MjhIMjM2LjAwMVYxMzdDMjM2LjAwMSAxMzUuODk1IDIzNS4xMDYgMTM1IDIzNC4wMDEgMTM1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0yMjMuMDAxIDE2N0MyMjEuODk2IDE2NyAyMjEuMDAxIDE2Ny44OTUgMjIxLjAwMSAxNjlWNDE3SDIyNS4wMDFWMTY5QzIyNS4wMDEgMTY3Ljg5NSAyMjQuMTA2IDE2NyAyMjMuMDAxIDE2N1oiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMjEyLjAwMSAxOTVDMjEwLjg5NiAxOTUgMjEwLjAwMSAxOTUuODk1IDIxMC4wMDEgMTk3VjQwN0gyMTQuMDAxVjE5N0MyMTQuMDAxIDE5NS44OTUgMjEzLjEwNiAxOTUgMjEyLjAwMSAxOTVaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTI2OC4wMDEgMTA0QzI2OS4xMDYgMTA0IDI3MC4wMDEgMTA0Ljg5NSAyNzAuMDAxIDEwNlY0MzlIMjY2LjAwMVYxMDZDMjY2LjAwMSAxMDQuODk1IDI2Ni44OTYgMTA0IDI2OC4wMDEgMTA0WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgogIDxwYXRoIGQ9Ik0yNzkuMDAxIDEzNUMyODAuMTA2IDEzNSAyODEuMDAxIDEzNS44OTUgMjgxLjAwMSAxMzdWNDI4SDI3Ny4wMDFWMTM3QzI3Ny4wMDEgMTM1Ljg5NSAyNzcuODk2IDEzNSAyNzkuMDAxIDEzNVoiIGZpbGw9IiNFQzIxMjgiPjwvcGF0aD4KICA8cGF0aCBkPSJNMjkxLjAwMSAxNjdDMjkyLjEwNiAxNjcgMjkzLjAwMSAxNjcuODk1IDI5My4wMDEgMTY5VjQxN0gyODkuMDAxVjE2OUMyODkuMDAxIDE2Ny44OTUgMjg5Ljg5NiAxNjcgMjkxLjAwMSAxNjdaIiBmaWxsPSIjRUMyMTI4Ij48L3BhdGg+CiAgPHBhdGggZD0iTTMwNC4wMDEgMTk1QzMwNS4xMDYgMTk1IDMwNi4wMDEgMTk1Ljg5NSAzMDYuMDAxIDE5N1Y0MDdIMzAyLjAwMVYxOTdDMzAyLjAwMSAxOTUuODk1IDMwMi44OTYgMTk1IDMwNC4wMDEgMTk1WiIgZmlsbD0iI0VDMjEyOCI+PC9wYXRoPgo8L3N2Zz4K"
+            alt="Salesnanny favicon 512 x 512"
+            class="img-fluid"
+            style="max-width:512px;width:100%;height:auto;clip-path: inset(1px);"
+          >
+          </div>
+        </div>
+        <span class="favicon-size-label">512 x 512<br>Variation Size</span>
+      </div>
     </div>
 </div>
 <div class="subdiv fade-in">
